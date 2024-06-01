@@ -34,3 +34,14 @@ function calc() {
     operation_status = 1;
     update_display();
 }
+
+window.onkeydown = function(event) {
+    let number = parseInt(event.key);
+    if (event.key >= 0 && event.key <= 9) {
+        write_number(number);
+    } else if (event.key === "+" || event.key === "-" || event.key === "*" || event.key === "/") {
+        write_operator(event.key);
+    } else if (event.key === "Enter") {
+        calc();
+    }
+};
